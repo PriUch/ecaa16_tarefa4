@@ -1,13 +1,11 @@
 import rospy
 from std_msgs.msg import String
-from std_msgs.msg import Int32
 #import matricula
 
 
 rospy.init_node('no_soma')
 
 numero_matricula = String()
-
 
 def sub_somaCallBack(msg):
     global numero_matricula
@@ -25,7 +23,7 @@ def timerCallBack(event):
     pub_soma.publish(msg)
  
 
-sub_soma = rospy.Subscriber('/no_matriucla/matricula', String, sub_somaCallBack)
+sub_soma = rospy.Subscriber('/no_matricula/matricula', String, sub_somaCallBack)
 pub_soma = rospy.Publisher('/no_soma/soma', String, queue_size=1)
 timer = rospy.Timer(rospy.Duration(0.1), timerCallBack)
 
