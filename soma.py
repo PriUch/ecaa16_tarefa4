@@ -16,7 +16,7 @@ def timerCallBack(event):
     soma = 0
     for k in range(len(numero_matricula.data)):
         soma = soma+int(numero_matricula.data[k]);
-    print('Soma = ('+numero_matricula.data + ')')
+ 
     msg = String()
     msg.data = str(soma)
     pub_soma.publish(msg)
